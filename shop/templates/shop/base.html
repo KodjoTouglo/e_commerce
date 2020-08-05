@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}E-commerce{% endblock %}</title>
+        <link href="{% static "css/base.css" %}" rel="stylesheet">
+    </head>
+
+ <body>
+    <div id="header">
+        <a href="/" class="logo">E-commerce</a>
+    </div>
+
+    <div id="subheader">
+        <div class="cart">
+            Votre panier est vide.
+        </div>
+    </div>
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+ </body>
+ 
+</html>
