@@ -14,7 +14,17 @@
 
     <div id="subheader">
         <div class="cart">
-            Votre panier est vide.
+            {% with total_items=cart|length %}
+                {% if total_items > 0 %}
+                    Votre panier:
+                    <a href="{% url "cart:cart_detail" %}">
+                        {{ total_items }} article{{ total_items|pluralize }},
+                        ${{ cart.get_total_price }}
+                    </a>
+                {% else %}
+                    Votre panier est vide.
+                {% endif %}
+            {% endwith %}
         </div>
     </div>
 
