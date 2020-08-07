@@ -62,6 +62,6 @@
         <a href="{% url 'shop:product_list' %}" class="button light">
             Continuer le shopping
         </a>
-        <a href="#" class="button">Proceder au paiment</a>
+        <a href="{% url 'orders:order_create' %}" class="button">Proceder au paiment</a>
     </p>
 {% endblock %}
